@@ -29,7 +29,8 @@ const Home = () => {
       setResponseFromAPI(true); // Indicate that a response is being awaited
 
       try {
-        const response = await fetch("http://localhost:4000/respond", {
+        const api_endpoint = process.env.REACT_APP_GPT_SERVER_ENDPOINT || "http://localhost:4000";
+        const response = await fetch(`${api_endpoint}/respond`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ message: inputPrompt }),

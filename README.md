@@ -72,7 +72,19 @@ node index.js
 - Check if your client application run on port 3000 with the development environment configuration, so in your browser just go to http://localhost:3000
 
 - Check if your server application run on port 4000
+## push to azure Cloud registry
 
+```
+az login
+az acr login --name narahebot
+docker tag  cbot-client:v1.0 narahebot.azurecr.io/pnbot-nodejs-client:v1.1
+docker tag  cbot-server:v1.0 narahebot.azurecr.io/pnbot-nodejs-server:v1.1
+docker push narahebot.azurecr.io/pnbot-nodejs-client:v1.1
+docker push narahebot.azurecr.io/pnbot-nodejs-server:v1.1
+```
+
+## for production build
+docker compose up -f .\docker-compose-prod.yaml
 ## Contribution
 
 All contributions are welcome. Feel free to open an issue or create a pull request. And I will be more than happy for sponsors.

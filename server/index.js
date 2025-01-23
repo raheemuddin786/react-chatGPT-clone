@@ -6,7 +6,7 @@ const cors = require("cors");
 
 // Initialize express app
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY, // This is also the default, can be omitted
