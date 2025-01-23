@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Avatar from "../components/Avatar";
-import BotResponse from "../components/BotResponse";
+// import BotResponse from "../components/BotResponse";
 import Error from "../components/Error";
 import IntroSection from "../components/IntroSection";
 import Loading from "../components/Loading";
 import NavContent from "../components/NavContent";
-import SvgComponent from "../components/SvgComponent";
+// import SvgComponent from "../components/SvgComponent";
 
 const Home = () => {
   const [showMenu, setShowMenu] = useState(false);

@@ -7,18 +7,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
-    volumes:
-      - ./server/index.js:/usr/src/app/index.js
   cbot-client:
     image: cbot-client:v1.0
     build: 
       context: ./client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-prod
     ports:
       - "3000:3000"
-    volumes:
-      - ./client/src:/usr/src/app/src
-      - ./client/public:/usr/src/app/public
-    command: [ "npm", "start" ]
     depends_on:
       - cbot-server
