@@ -9,11 +9,15 @@ const app = express();
 const port = 4000;
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // This is also the default, can be omitted
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY, // This is also the default, can be omitted
 });
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 // Route to handle POST requests
 app.post("/respond", async (req, res) => {
